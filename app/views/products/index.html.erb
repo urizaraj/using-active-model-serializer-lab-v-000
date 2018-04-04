@@ -11,6 +11,7 @@ $(function() {
     var id = $(this).data("id");
 
     $.get("/products/" + id + ".json", function(json) {
+      console.log(json)
       var inventoryText
       if (parseInt(json['inventory']) > 0)  {
         inventoryText = "<strong>Available</strong>"
