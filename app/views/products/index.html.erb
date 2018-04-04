@@ -9,10 +9,8 @@
 $(function() {
   $(".js-more").on("click", function() {
     var id = $(this).data("id");
-    console.log('step 1')
 
     $.get("/products/" + id + ".json", function(json) {
-      console.log('step 2')
       var inventoryText
       if (parseInt(json['inventory']) > 0)  {
         inventoryText = "<strong>Available</strong>"
