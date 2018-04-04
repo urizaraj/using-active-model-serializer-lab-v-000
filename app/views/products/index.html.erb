@@ -20,7 +20,8 @@ $(function() {
       }
 
       var descriptionText = "<p>" + json['description'] + "</p><p>" + inventoryText + "</p>";
-      $("#product-" + id).html(descriptionText);
+      var product = $("#product-" + id)
+      product.html(descriptionText);
     })
   });
 });
