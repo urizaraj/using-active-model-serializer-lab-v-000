@@ -23,7 +23,7 @@ $(function() {
       var product = $("#product-" + id)
       product.html(descriptionText);
       if (json['orders'].length > 0) {
-        product[0].innerHTML += '<h4> Orders </h4>'
+        product[0].innerHTML += '<strong> Orders </strong><br>'
         product[0].innerHTML += '<ul>'
         json['orders'].forEach(function(order) {
           product[0].innerHTML += '<li>' + order['id'] + ' | ' + order['created_at'] + '</li>'
@@ -34,3 +34,4 @@ $(function() {
   });
 });
 </script>
+  
