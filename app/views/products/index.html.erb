@@ -22,11 +22,14 @@ $(function() {
       var descriptionText = "<p>" + json['description'] + "</p><p>" + inventoryText + "</p>";
       var product = $("#product-" + id)
       product.html(descriptionText);
-      product[0].innerHTML += '<ul>'
-      json['orders'].forEach(function(order) {
-        product[0].innerHTML += '<li>' + order['id'] + ' | ' + order['created_at'] + '</li>'
-      })
-      product[0].innerHTML += '</ul>'
+      if (json['orders'].length > 0) {
+        product[0].innerHTML += '<h4> Orders </h4>'
+        product[0].innerHTML += '<ul>'
+        json['orders'].forEach(function(order) {
+          product[0].innerHTML += '<li>' + order['id'] + ' | ' + order['created_at'] + '</li>'
+        })
+        product[0].innerHTML += '</ul>'
+      }
     })
   });
 });
